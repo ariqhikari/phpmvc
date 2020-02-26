@@ -1,11 +1,13 @@
 <?php
 
-class Siswa
+class Siswa extends Controller
 {
     public function index()
     {
-        $this->view("templates/header");
-        $this->view("siswa/index");
+        $data["judul"] = "Daftar Siswa";
+        $data["siswa"] = $this->model("Siswa_model")->getAllSiswa();
+        $this->view("templates/header", $data);
+        $this->view("siswa/index", $data);
         $this->view("templates/footer");
     }
 }
