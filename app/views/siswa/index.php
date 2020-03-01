@@ -1,6 +1,11 @@
 <div class="container mt-3">
     <div class="row">
-        <div class="col-6">
+        <div class="col-lg-6">
+            <?php Flasher::flash(); ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
             <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#formModal">
                 Tambah data siswa
             </button>
@@ -16,7 +21,6 @@
         </div>
     </div>
 </div>
-
 <!-- Modal -->
 <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="judulModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
