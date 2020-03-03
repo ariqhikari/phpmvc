@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#formModal">
+            <button type="button" class="btn btn-primary mb-3 tombolTambahSiswa" data-toggle="modal" data-target="#formModal">
                 Tambah data siswa
             </button>
             <h3>Daftar Siswa</h3>
@@ -14,7 +14,8 @@
                 <?php foreach ($data["siswa"] as $sw) : ?>
                     <li class="list-group-item">
                         <?= $sw["nama"]; ?>
-                        <a href="<?= BASEURL; ?>/siswa/hapus/<?= $sw["id"]; ?>" class="badge badge-danger float-right ml-1" onclick="return confirm('yakin?')">hapus</a>
+                        <a href="<?= BASEURL; ?>/siswa/hapus/<?= $sw["id"]; ?>" class="badge badge-danger float-right ml-1" onclick="return confirm('yakin?')">delete</a>
+                        <a href="<?= BASEURL; ?>/siswa/ubah/<?= $sw["id"]; ?>" class="badge badge-success float-right ml-1 tampilModalUbah" data-toggle="modal" data-target="#formModal">edit</a>
                         <a href="<?= BASEURL; ?>/siswa/detail/<?= $sw["id"]; ?>" class="badge badge-primary float-right ml-1">detail</a>
                     </li>
                 <?php endforeach; ?>
@@ -23,11 +24,11 @@
     </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="judulModal" aria-hidden="true">
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="judulModal">Tambah Data Siswa</h5>
+                <h5 class="modal-title" id="formModalLabel">Tambah Data Siswa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
