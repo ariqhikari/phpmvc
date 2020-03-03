@@ -28,4 +28,14 @@ class Siswa extends Controller
         header("Location: " . BASEURL . "/siswa");
         exit;
     }
+    public function hapus($id)
+    {
+        if ($this->model("Siswa_model")->hapusDataSiswa($id) > 0) {
+            Flasher::setFlash("berhasil", "dihapus", "success");
+        } else {
+            Flasher::setFlash("gagal", "dihapus", "danger");
+        }
+        header("Location: " . BASEURL . "/siswa");
+        exit;
+    }
 }

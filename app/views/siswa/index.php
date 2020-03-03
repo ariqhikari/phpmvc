@@ -12,9 +12,10 @@
             <h3>Daftar Siswa</h3>
             <ul class="list-group">
                 <?php foreach ($data["siswa"] as $sw) : ?>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li class="list-group-item">
                         <?= $sw["nama"]; ?>
-                        <a href="<?= BASEURL; ?>/siswa/detail/<?= $sw["id"]; ?>" class="badge badge-primary">Detail</a>
+                        <a href="<?= BASEURL; ?>/siswa/hapus/<?= $sw["id"]; ?>" class="badge badge-danger float-right ml-1" onclick="return confirm('yakin?')">hapus</a>
+                        <a href="<?= BASEURL; ?>/siswa/detail/<?= $sw["id"]; ?>" class="badge badge-primary float-right ml-1">detail</a>
                     </li>
                 <?php endforeach; ?>
             </ul>
