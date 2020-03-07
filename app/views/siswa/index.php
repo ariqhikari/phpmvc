@@ -15,7 +15,7 @@
                     <li class="list-group-item">
                         <?= $sw["nama"]; ?>
                         <a href="<?= BASEURL; ?>/siswa/hapus/<?= $sw["id"]; ?>" class="badge badge-danger float-right ml-1" onclick="return confirm('yakin?')">delete</a>
-                        <a href="<?= BASEURL; ?>/siswa/ubah/<?= $sw["id"]; ?>" class="badge badge-success float-right ml-1 tampilModalUbah" data-toggle="modal" data-target="#formModal">edit</a>
+                        <a href="<?= BASEURL; ?>/siswa/ubah/<?= $sw["id"]; ?>" class="badge badge-success float-right ml-1 tampilModalUbah" data-toggle="modal" data-target="#formModal" data-id="<?= $sw["id"];  ?>">edit</a>
                         <a href="<?= BASEURL; ?>/siswa/detail/<?= $sw["id"]; ?>" class="badge badge-primary float-right ml-1">detail</a>
                     </li>
                 <?php endforeach; ?>
@@ -35,22 +35,23 @@
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL; ?>/siswa/tambah" method="POST">
+                    <input type="hidden" name="id" id="id">
                     <div class="form-group">
                         <label for="nama">Nama</label>
-                        <input type="text" class="form-control" id="nama" placeholder="Masukkan nama" name="nama">
+                        <input type="text" class="form-control" id="nama" placeholder="Masukkan nama" name="nama" required>
                     </div>
                     <div class="form-group">
                         <label for="nis">NIS</label>
-                        <input type="number" class="form-control" id="nis" placeholder="Masukkan NIS" name="nis">
+                        <input type="number" class="form-control" id="nis" placeholder="Masukkan NIS" name="nis" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Masukkan email" name="email">
+                        <input type="email" class="form-control" id="email" placeholder="Masukkan email" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="jurusan">Jurusan</label>
-                        <select class="form-control" id="jurusan" name="jurusan">
-                            <option>Jurusan</option>
+                        <select class="form-control" id="jurusan" name="jurusan" required>
+                            <option value="Jurusan">Jurusan</option>
                             <option value="Teknik Komputer Jaringan">Teknik Komputer Jaringan</option>
                             <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
                             <option value="Multimedia">Multimedia</option>
