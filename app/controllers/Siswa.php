@@ -52,4 +52,12 @@ class Siswa extends Controller
         header("Location: " . BASEURL . "/siswa");
         exit;
     }
+    public function cari()
+    {
+        $data["judul"] = "Daftar Siswa";
+        $data["siswa"] = $this->model("Siswa_model")->cariDataSiswa($_POST);
+        $this->view("templates/header", $data);
+        $this->view("siswa/index", $data);
+        $this->view("templates/footer");
+    }
 }
